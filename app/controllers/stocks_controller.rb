@@ -35,7 +35,12 @@ class StocksController < ApplicationController
 
   # DELETE /stocks/1
   def destroy
-    @stock.destroy
+
+    if @stock.destroy
+      render json: {message: "Stock successfully deleted."}
+    else
+      render json: {message: "Somethign went wrong! Errors: #{@stock.errors.full_messages}"}
+    end
   end
 
   private
