@@ -11,4 +11,5 @@ class Stock {
         this.id = id;
         Stock.all.push(this)
     }
+    
 }
