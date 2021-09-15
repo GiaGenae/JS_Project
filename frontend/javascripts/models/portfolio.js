@@ -36,4 +36,23 @@ class Portfolio {
         option.innerText = this.investor
         stockSelectPortfolio().append(option)
     }
+
+    render() {
+        const h4 = document.createElement("h4")
+        const div = document.createElement("div")
+        div.id = `stocks-${this.id}`
+        div.classList.add(`stocks_data`);
+
+        const a = document.createElement("a")
+        a.id = `Portfolio-${this.id}`
+        a.innerText = this.investor
+        a.href = "####"
+        a.classList.add(`view_stocks`);
+        a.setAttribute(`data-id` , `${this.id}`);
+        a.addEventListener("click", this.renderStocks)
+        h4.appendChild(a)
+        portfolioSection().appendChild(h4)
+        portfolioSection().appendChild(div)
+        document.querySelector(`a.view_stocks[data-id='${this.id}']`).addEventListener("click", PortfoliosApi.fetchPortfolioStocks)
+    }
 }
