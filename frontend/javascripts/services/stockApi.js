@@ -88,7 +88,7 @@ class StockApi {
             portfolio_id: portfolio().value,
             price: price().value
         }
-        fetch(`${baseUrl}/stocks`, {
+        fetch(`${BASE_URL}/stocks`, {
             method: 'POST',
             headers: {
                 "Content-Type": 'application/json'
@@ -103,7 +103,7 @@ class StockApi {
     }
 
     static handleDelete = (e) => {
-        fetch(`${baseUrl}/stocks/${e.target.dataset.id}`, {
+        fetch(`${BASE_URL}/stocks/${e.target.dataset.id}`, {
             method: 'DELETE',
             headers: {
                 "Content-Type": 'application/json'

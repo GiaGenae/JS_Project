@@ -53,6 +53,6 @@ class Portfolio {
         h4.appendChild(a)
         portfolioSection().appendChild(h4)
         portfolioSection().appendChild(div)
-        document.querySelector(`a.view_stocks[data-id='${this.id}']`).addEventListener("click", PortfoliosApi.fetchPortfolioStocks)
+        document.querySelector(`a.view_stocks[data-id='${this.id}']`).addEventListener("click", PortfolioApi.fetchPortfolioStocks)
     }
 }

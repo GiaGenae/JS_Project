@@ -10,7 +10,7 @@ class PortfolioApi {
         const h2 = document.createElement("h2")
         h2.innerText = 'Portfolios'
         portfolioSection().appendChild(h2)
-        fetch(`${baseUrl}/portfolios`)
+        fetch(`${BASE_URL}/portfolios`)
         .then(resp => resp.json())
         .then(json => json.forEach(pObj => {
             let port = Portfolio.findOrCreateBy(pObj)
@@ -41,7 +41,7 @@ class PortfolioApi {
         const stockSection = () => document.getElementById(`stocks-${e.target.dataset.id}`)
 
         stockSection().innerHTML = html;
-        fetch(`${baseUrl}/portfolios/${e.target.dataset.id}`)
+        fetch(`${BASE_URL}/portfolios/${e.target.dataset.id}`)
             .then(resp => resp.json())
             .then(json => {
                 let stocks = json.stocks

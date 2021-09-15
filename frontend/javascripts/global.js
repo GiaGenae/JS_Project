@@ -1,8 +1,12 @@
 const BASE_URL = "http://localhost:3000"
 
+const stockSelectPortfolio = () => document.getElementById("s_portfolio")
+const portfolioSection = () => document.getElementById("s_portfolio_data")
 const stockFormSection = () => document.getElementById("new-form-section")
-const newFormSection = () => document.getElementById("new-stock")
 const stockForm = () => document.getElementById("stock-form")
+const tableSection = () => document.getElementById("table_data")
+const newFormSection = () => document.getElementById("new-stock")
+const showPortfolios = () => document.getElementById("portfolio")
 
 const company = () => document.getElementById("company")
 const ticker = () => document.getElementById("ticker")
