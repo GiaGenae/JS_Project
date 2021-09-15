@@ -1,6 +1,6 @@
-class PortfoliosApi {
+class PortfolioApi {
 
-    static url = `${baseUrl}/portfolios`
+    static url = `${BASE_URL}/portfolios`
 
     static fetchPortfolios() {
         let portfolios=document.getElementById("s_portfolio_data");

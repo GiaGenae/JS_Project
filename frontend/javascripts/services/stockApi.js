@@ -48,7 +48,7 @@ class StockApi {
         </form>`;
 
         stockFormSection().innerHTML = html;
-        PortfoliosApi.dropdownFetchPortfolios()
+        PortfolioApi.dropdownFetchPortfolios()
         stockForm().addEventListener("submit", StockApi.handleSubmit)
     }
 
@@ -111,7 +111,7 @@ class StockApi {
         })
         .then(resp => resp.json())
         .then(json => {
-            PortfoliosApi.fetchPortfolios()
+            PortfolioApi.fetchPortfolios()
         })
         .catch(this.handleError)
     }
