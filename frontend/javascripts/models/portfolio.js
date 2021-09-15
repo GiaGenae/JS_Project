@@ -25,4 +25,15 @@ class Portfolio {
     static findOrCreateBy(pObj) {
         return this.findByName(pObj.investor) || new Portfolio(pObj)
     }
+
+    getStocks() {
+        return Stock.all.filter(stock => this.id === stock.id )
+    }
+
+    addToDropDown() {
+        const option = document.createElement("option")
+        option.value = this.id
+        option.innerText = this.investor
+        stockSelectPortfolio().append(option)
+    }
 }
