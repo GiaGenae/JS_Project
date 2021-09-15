@@ -42,10 +42,6 @@ class StockApi {
                 <label for="price">Price:</label>
                 <input class="form-control" id="price" type="text">
             </div>
-            <div class="form-group">
-                <label for="shares">Shares:</label>
-                <input class="form-control" id="shares" min="1" type="number">
-            </div>
             <div class="form-group submit">
                 <button class="btn btn-info" type="submit">Submit</button>
             </div>
@@ -54,6 +50,55 @@ class StockApi {
         stockFormSection().innerHTML = html;
         PortfoliosApi.dropdownFetchPortfolios()
         stockForm().addEventListener("submit", StockApi.handleSubmit)
+    }
 
+    static fetchStocks() {
+        let html=`
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>Company</th>
+                <th>Ticker</th>
+                <th>Sector</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody id="table_data">
+            </tbody>
+        </table>
+        `;
+    }
+
+    static handleError(error) {
+        flash().innerText = error
+        flash().classList.remove("hide")
+        setTimeout(() => {
+            flash().innerText = ""
+            flash().classList.add("hide")
+        }, 5000)
+    }
+
+    static handleSubmit(e) {
+        e.preventDefault()
+        const data = {
+            company: company().value,
+            ticker: ticker().value,
+            sector: sector().value,
+            portfolio_id: portfolio().value,
+            price: price().value
+        }
+        fetch(`${baseUrl}/stocks`, {
+            method: 'POST',
+            headers: {
+                "Content-Type": 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(resp => resp.json())
+        .then(json => {
+            let stock = new Stock(json)
+            stockForm().reset()
+        })
     }
 }
