@@ -101,4 +101,18 @@ class StockApi {
             stockForm().reset()
         })
     }
+
+    static handleDelete = (e) => {
+        fetch(`${baseUrl}/stocks/${e.target.dataset.id}`, {
+            method: 'DELETE',
+            headers: {
+                "Content-Type": 'application/json'
+            }
+        })
+        .then(resp => resp.json())
+        .then(json => {
+            PortfoliosApi.fetchPortfolios()
+        })
+        .catch(this.handleError)
+    }
 }
