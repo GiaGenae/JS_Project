@@ -32,7 +32,6 @@ class PortfolioApi {
                 <th>sector</th>
                 <th>Portfolio</th>
                 <th>Price</th>
-                <th>Action</th>
             </tr>
             </thead>
             <tbody id="table_data">

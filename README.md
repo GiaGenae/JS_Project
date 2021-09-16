@@ -1,4 +1,4 @@
-# ReadMe
+# SuperStock
 
 SuperStock is an app created to manage stocks in a portfolio, including all relevant stock data (i.e. Company, ticker, price, etc.)
 
