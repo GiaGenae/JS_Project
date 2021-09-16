@@ -1,4 +1,4 @@
-# SuperStock
+![SuperStock](https://user-images.githubusercontent.com/68574177/133537944-41b0151d-5cd5-4521-ba50-5e3b4a8c34d4.png)
 
 SuperStock is an app created to manage stocks in a portfolio, including all relevant stock data (i.e. Company, ticker, price, etc.)
 
